@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HomePage_LMMB extends StatelessWidget {
+  const HomePage_LMMB({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

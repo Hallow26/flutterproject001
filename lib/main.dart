@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project01/homepage_LMMB.dart';
+import 'package:project01/page1_LMMB.dart';
+import 'package:project01/page2_LMMB.dart';
+import 'package:project01/signup_LMMB.dart';
 
 void main() {
   runApp(
@@ -25,12 +28,15 @@ void main() {
         '/home': (context) => HomePage_LMMB(),
         '/page1': (context) => Page1_LMMB(),
         '/page2': (context) => Page2_LMMB(),
+        '/signup': (context) => SignUpPage(), // Add SignUpPage route
       },
     ),
   );
 }
 
 class LoginForm extends StatefulWidget {
+  const LoginForm({super.key});
+
   @override
   _LoginFormState createState() => _LoginFormState();
 }
@@ -82,27 +88,14 @@ class _LoginFormState extends State<LoginForm> {
           onPressed: _handleLogin,
           child: Text('Sign In'),
         ),
+        SizedBox(height: 10),
+        TextButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/signup'); // Navigate to SignUpPage
+          },
+          child: Text("Don't have an account? Sign Up"),
+        ),
       ],
-    );
-  }
-}
-
-class Page1_LMMB extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Page 1')),
-      body: Center(child: Text('This is Page 1')),
-    );
-  }
-}
-
-class Page2_LMMB extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Page 2')),
-      body: Center(child: Text('This is Page 2')),
     );
   }
 }
